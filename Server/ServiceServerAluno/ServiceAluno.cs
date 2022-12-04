@@ -360,7 +360,7 @@ namespace BlazorApp1.Server.ServiceServerAluno
             }
         }
 
-        // Vídeo #34. Outros vídeos sobre UPDATE, vídeos #08, #09, #15, #16 e #32.
+        // Vídeo #34. Outros vídeos sobre UPDATE: Vídeos #08, #09, #15, #16 e #32.
         public async Task UpdateAsync6(int id1, string sobrenome)
         {
             AlunosTeste? alunos = await DataContext.TableTeste
