@@ -5,13 +5,16 @@
 @inject IServiceClientAluno _serviceAluno
 @inject NavigationManager _navigation
 
-<h1 class="mb-3">
-    Alunos <button type="button" class="btn btn-link"
-                   @onclick="() => GetAlunos()"><i style="font-size:2.5em;" class="bi bi-arrow-clockwise"></i>
-            </button>
-           <NavLink href=@HomePageURI Match="NavLinkMatch.All">
-                <i class="bi bi-house-door-fill"></i></NavLink>
-           
+<h1 class="mb-3">    
+    Alunos
+    <NavLink style="cursor:pointer" @onclick="() => GetAlunos()">
+        <i class="bi bi-arrow-clockwise"></i></NavLink>
+    <NavLink href=@HomePageURI Match="NavLinkMatch.All">
+        <i class="bi bi-house-door-fill"></i>
+    </NavLink>
+    <NavLink href="fetchdata" Match="NavLinkMatch.Prefix">
+        <i class="bi bi-thermometer-high"></i>
+    </NavLink>        
 </h1>
 <h4 class="mb-3">
     <button @onclick="AddAluno" type="button" style="border-radius:20%;" class="btn btn-warning">

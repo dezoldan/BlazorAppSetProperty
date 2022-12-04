@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gmCyoWkzlFuVMHPVaSez40cj542z6jLAuR8uqfu42h2UVDyiLGEt1jfWPtx/wfWa/Q0ondUSaAHkuLwZye29hw==",
+  "dgSpecHash": "hHz4nk7vSqQq3y3f8vUTxeYWwF+Y5uOc9Xbd+mkDeiuVQ95EcU5xqXk2JY2nRCcRyrvqIAmV4dXCJ90nuziTvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dezol\\OneDrive\\Blazor-2022\\Blazor-2022\\YouTube\\Vídeos\\BlazorAppVideos\\Client\\BlazorApp1.Client.csproj",
+  "projectFilePath": "C:\\Users\\dezol\\Source\\Repos\\BlazorAppVideos\\Client\\BlazorApp1.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dezol\\.nuget\\packages\\blazorcomponentutilities\\1.6.0\\blazorcomponentutilities.1.6.0.nupkg.sha512",
     "C:\\Users\\dezol\\.nuget\\packages\\blazorpro.spinkit\\1.2.0\\blazorpro.spinkit.1.2.0.nupkg.sha512",
