@@ -36,5 +36,6 @@ namespace BlazorApp1.Server.ServiceServerAluno
         Task<AlunosTeste> UpdateAlunos(AlunosTeste alunosTeste);
         Task<AlunosTeste> UpdateAlunosById(int id1);
         Task UpdateAsync6(int id1, string sobrenome);
+        Task UpdateAsync7(int id1, string sobrenome, int idade1);
     }
 }

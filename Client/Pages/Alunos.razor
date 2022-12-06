@@ -4,17 +4,17 @@
 @inject HttpClient Http
 @inject IServiceClientAluno _serviceAluno
 @inject NavigationManager _navigation
-
 <h1 class="mb-3">    
     Alunos
-    <NavLink style="cursor:pointer" @onclick="() => GetAlunos()">
-        <i class="bi bi-arrow-clockwise"></i></NavLink>
-    <NavLink href=@HomePageURI Match="NavLinkMatch.All">
+<NavLink style="cursor:pointer; color:darkblue" @onclick="() => GetAlunos()">
+    <i class="bi bi-arrow-clockwise"></i>
+</NavLink>
+<NavLink href="@HomePageURI" Match="NavLinkMatch.All">
         <i class="bi bi-house-door-fill"></i>
-    </NavLink>
+</NavLink>
     <NavLink href="fetchdata" Match="NavLinkMatch.Prefix">
         <i class="bi bi-thermometer-high"></i>
-    </NavLink>        
+    </NavLink>
 </h1>
 <h4 class="mb-3">
     <button @onclick="AddAluno" type="button" style="border-radius:20%;" class="btn btn-warning">
@@ -34,10 +34,10 @@ else
         <table class="table table-hover">
             <thead style="font-weight:bold; font-size:1.2em;">
                 <tr>
-
+                    <td style="width: 5%">Ação</td>
                     <td style="width: 10%">Id</td>
                     <td style="width: 10%">Nome</td>
-                    <td style="width: 20%">Sobrenome</td>
+                    <td style="width: 15%">Sobrenome</td>
                     <td style="width: 10%">Idade</td>
                     <td style="width: 10%">Excluir</td>
                     <td style="width: 15%">Editar</td>
@@ -56,6 +56,9 @@ else
                         {
                             icon1 = "bi bi-x-circle";
                         }
+                        <td>
+                            <a style="cursor:pointer" @onclick="@(() => DeleteClick(aluno.Id))" class="">x</a>
+                        </td>
                         <td>@aluno.Id</td>
                         <td>@aluno.Nome</td>
                         <td>@aluno.Sobrenome</td>
@@ -71,12 +74,14 @@ else
                                 <i class="bi bi-pencil-fill"></i>
                             </button>
                         </td>
-                        <td><i style="font-size:2em;" class="@icon1"></i></td>
+                        <td>
+                            <i style="font-size:2em; cursor:pointer" class="@icon1"></i>
+                        </td>
                     </tr>
                     @if (aluno.IsRowExpanded)
                     {
                         <tr>
-                            <td colspan="7">
+                            <td colspan="8">
                                 <div class="container bg-danger">
                                     <div style="background-color:#fffafa" class="card card-body">
                                         <h5 style="text-align:left;">A idade do aluno é: @aluno.Idade</h5>
@@ -143,7 +148,6 @@ else
     protected override async Task OnInitializedAsync()
     {
         HomePageURI = _navigation.BaseUri;
-
         // Vídeo #19, e se refere a implementação no projeto Blazor Server do vídeo #01.
         alunosTestes = await Http.GetFromJsonAsync<IEnumerable<AlunosTeste>>("v0/Aluno/metodo1");
 
@@ -197,9 +201,9 @@ else
                 Idade = alunosTeste1.Idade
             };
 
-            await _serviceAluno.PostAluno1(alunosTeste2);
-            alunosTestes = await _serviceAluno.GetAlunos1();
-            visivel = "none";
-            isLoading1 = false;
-    }
+        await _serviceAluno.PostAluno1(alunosTeste2);
+        alunosTestes = await _serviceAluno.GetAlunos1();
+        visivel = "none";
+        isLoading1 = false;
+    }   
 }

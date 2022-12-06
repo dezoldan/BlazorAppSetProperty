@@ -260,5 +260,12 @@ namespace BlazorApp1.Server.Controllers
         {
             await ServiceAluno.UpdateAsync6(id1, sobrenome);
         }
+
+        // Vídeo #39.
+        [HttpPut("update7/{id1:int}/{sobrenome}/{idade1}")]
+        public async Task UpdateAsync7([FromRoute] int id1, string sobrenome, int idade1)
+        {
+            await ServiceAluno.UpdateAsync7(id1, sobrenome, idade1);
+        }
     }
 }

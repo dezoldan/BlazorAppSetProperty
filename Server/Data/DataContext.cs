@@ -1,6 +1,7 @@
 ﻿using BlazorApp1.Client.Pages;
 using BlazorApp1.Shared;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace BlazorApp1.Server.Data
 {
@@ -8,7 +9,7 @@ namespace BlazorApp1.Server.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
+           
         }
         public DbSet<AlunosTeste> TableTeste { get; set; }
     }

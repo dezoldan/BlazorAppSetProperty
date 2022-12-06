@@ -39,7 +39,9 @@ else
 
 @code {
     private WeatherForecast[]? forecasts;
-
+    [CascadingParameter(Name ="IdadeAluno")]
+    private List<Alunos>? alunos1 { get; set; }
+    
     protected override async Task OnInitializedAsync()
     {
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");

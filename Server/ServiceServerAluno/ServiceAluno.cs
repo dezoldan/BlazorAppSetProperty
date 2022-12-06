@@ -370,7 +370,23 @@ namespace BlazorApp1.Server.ServiceServerAluno
                 await DataContext.TableTeste
                     .Where(x => x.Id.Equals(id1))
                     .ExecuteUpdateAsync(x => x
-                    .SetProperty(x => x.Sobrenome, sobrenome));                    
+                    .SetProperty(x => x.Sobrenome, sobrenome));
+            }
+        }
+
+        // Vídeo #39.
+        // Atualizar o sobrenome e a idade do aluno.
+        public async Task UpdateAsync7(int id1, string sobrenome, int idade1)
+        {
+            AlunosTeste? alunos = await DataContext.TableTeste
+                .FirstAsync(x => x.Id == id1);
+            if (alunos != null)
+            {
+                await DataContext.TableTeste
+                    .Where(x => x.Id == id1)
+                    .ExecuteUpdateAsync(x => x
+                    .SetProperty(x => x.Sobrenome, sobrenome)
+                    .SetProperty(x => x.Idade, idade1));
             }
         }
     }
